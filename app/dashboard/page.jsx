@@ -1,9 +1,40 @@
-import React from 'react'
+'use client'
+
+import useSWR from 'swr'
+import { notFound } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
 const dashboard = () => {
+
+  /*
+  const [isLoading, setIsLoading] = useState(true) ;
+  const [error, setError] = useState(false) ;
+  const [data, setData] = useState([]) ;
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/posts`) 
+
+      if(!res.ok) {
+        setError(true);
+        return
+      }
+      
+      setData(await res.json())
+      setIsLoading(false) ;
+    }
+
+    getData() 
+  },[])
+  */
+
+  const fetcher = (url) => fetch(url).then((res) => res.json())
+  const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher)
+
+  console.log(data)
+
   return (
     <div>
-      Dashboard
     </div>
   )
 }

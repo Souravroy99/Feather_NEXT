@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -16,17 +16,19 @@ async function getData(id) {
 }
 
 
-export async function generateMetadata({ params }) {
+// export async function generateMetadata({ params }) {
 
-  const post = await getData(params.id)
-  return {
-    title: post.title,
-    description: post.desc,
-  };
-}
+//   const post = await getData(params.id)
+//   return {
+//     title: post.title,
+//     description: post.desc,
+//   };
+// }
 
-const BlogPost = async ({ params }) => {
-  const data = await getData(params.id);
+const BlogPost = async (props) => {
+  const params = await props.params
+  const data = await getData(params.id)
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
