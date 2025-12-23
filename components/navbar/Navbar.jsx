@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './page.module.css'
+import DarkMode from '../DarkMode/DarkMode'
 
 const links = [
     { id:1, linkName: "Home", linkURL: '/' },
@@ -15,13 +16,14 @@ const Navbar = () => {
     <div className={styles.contactContainer}>
       <Link className={styles.logo} href={'/'}>Feather</Link>
       <div className={styles.links}>
+        <DarkMode />
         {
           links.map((link) => {
             return <Link className={styles.link} key={link.id} href={link.linkURL}>{link.linkName}</Link>
           })
         }
 
-        <button className={styles.logout} >Logout</button>
+        <button className={styles.logout}>Logout</button>
       </div>
     </div>
   )

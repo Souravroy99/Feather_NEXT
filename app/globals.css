@@ -24,20 +24,20 @@ a {
 }
 
 .light {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(245, 237, 237);
   color: #111;
 }
 
 .dark {
-  background-color: #111;
+  background-color: #070707;
   color: #bbb;
 }
 
 .container {
-  max-width: 1366px;
+  /* max-width: 1366px; */
   min-height: 100vh;
   margin: 0 auto;
-  padding: 0 60px;
+  /* padding: 0 60px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
