@@ -1,23 +1,27 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        unique: true,
-        required: true
+      type: String,
+      required: true,
+      unique: true,
     },
     email: {
-        type: String,
-        unique: true,
-        required: true
+      type: String,
+      required: true,
+      unique: true,
     },
     password: {
-        type: String,
-        required: true
-    }
-}, {
-    timestamps: true
-})
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-const UserModel = mongoose.model('user', userSchema)
-export default UserModel
+// ✅ THIS IS THE FIX
+const UserModel =
+  mongoose.models.User || mongoose.model("User", userSchema);
+
+export default UserModel;

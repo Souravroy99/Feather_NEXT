@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import styles from './page.module.css'
 import DarkMode from '../DarkMode/DarkMode'
+import { signOut, useSession } from 'next-auth/react'
 
 const links = [
     { id:1, linkName: "Home", linkURL: '/' },
@@ -12,18 +15,26 @@ const links = [
 ]
 
 const Navbar = () => {
+
+  const session = useSession()
+  
   return (
     <div className={styles.contactContainer}>
       <Link className={styles.logo} href={'/'}>Feather</Link>
       <div className={styles.links}>
         <DarkMode />
+
         {
           links.map((link) => {
             return <Link className={styles.link} key={link.id} href={link.linkURL}>{link.linkName}</Link>
           })
         }
 
-        <button className={styles.logout}>Logout</button>
+        {
+          session.status !== 'unauthenticated' && (
+            <button className={styles.logout} onClick={signOut}>Logout</button>
+          )
+        }
       </div>
     </div>
   )

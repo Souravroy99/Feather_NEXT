@@ -4,36 +4,23 @@ import useSWR from 'swr'
 import { notFound } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 const dashboard = () => {
 
-  /*
-  const [isLoading, setIsLoading] = useState(true) ;
-  const [error, setError] = useState(false) ;
-  const [data, setData] = useState([]) ;
-
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/posts`) 
-
-      if(!res.ok) {
-        setError(true);
-        return
-      }
-      
-      setData(await res.json())
-      setIsLoading(false) ;
-    }
-
-    getData() 
-  },[])
-  */
-
+  const router = useRouter()
   const session = useSession();
-  // console.log(session)
+  console.log(session)
 
   const fetcher = (url) => fetch(url).then((res) => res.json())
   const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher)
+
+  if(session.status === 'loading') {
+    return <p>Loading...</p>
+  }
+  else if(session.status === 'unauthenticated') {
+    router.push('/dashboard/login')
+  }
 
   console.log(data)
 
