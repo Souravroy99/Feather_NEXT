@@ -4,9 +4,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost: 3000/api/posts/${id}`, {
     cache: "no-store",
-  });
+  }); 
 
   if (!res.ok) {
     return notFound()
@@ -15,15 +15,21 @@ async function getData(id) {
   return res.json();
 }
 
+/*
+export const metadata = {
+  title: "Feather",
+  description: "A fullstack Next website"
+} 
+*/
 
-// export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }) {
 
-//   const post = await getData(params.id)
-//   return {
-//     title: post.title,
-//     description: post.desc,
-//   };
-// }
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
 
 const BlogPost = async (props) => {
   const params = await props.params

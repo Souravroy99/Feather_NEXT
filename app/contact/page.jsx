@@ -2,6 +2,11 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Button from '@/components/Button/Button'
 
+export const metadata = {
+  title: "Feather Contact",
+  description: "This is contact page"
+} 
+
 const Contact = () => {
   return (
     <div>

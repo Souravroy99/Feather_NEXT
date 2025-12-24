@@ -1,11 +1,14 @@
-import React from 'react'
+'use client'
 
-const login = () => {
+import { signIn } from 'next-auth/react'
+import styles from './page.module.css'
+
+const Login = () => {
   return (
-    <div>
-      login
+    <div className={styles.container}>
+      <button onClick={() => signIn("google")}>Login with Google</button>
     </div>
   )
 }
 
-export default login
+export default Login

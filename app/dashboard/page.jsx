@@ -3,6 +3,7 @@
 import useSWR from 'swr'
 import { notFound } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import { useSession } from 'next-auth/react'
 
 const dashboard = () => {
 
@@ -27,6 +28,9 @@ const dashboard = () => {
     getData() 
   },[])
   */
+
+  const session = useSession();
+  // console.log(session)
 
   const fetcher = (url) => fetch(url).then((res) => res.json())
   const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher)
