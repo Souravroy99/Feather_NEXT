@@ -44,7 +44,7 @@ const dashboard = () => {
       });
 
       mutate() ;
-
+      e.target.reset();
     } 
     catch (error) {
       console.log(`Dashboard/page.jsx: ${error}`)
