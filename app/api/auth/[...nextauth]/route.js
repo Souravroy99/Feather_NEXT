@@ -44,7 +44,6 @@ const handler = NextAuth({
           throw new Error("Invalid credentials");
         }
 
-        // ✅ RETURN SAFE OBJECT ONLY
         return {
           id: user._id.toString(),
           name: user.name,

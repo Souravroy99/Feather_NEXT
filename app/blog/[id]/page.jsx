@@ -4,27 +4,29 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`http://localhost: 3000/api/posts/${id}`, {
+
+  /*
+    ➡️ In Next.js server runtime, fetch does NOT know the origin
+    ➡️ Relative URLs (/api/...) do not work on the server
+
+    ✅This works in client components, but fails on the server.
+  */
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   }); 
-
-  if (!res.ok) {
+  
+  if (!res.ok) { 
     return notFound()
   }
 
   return res.json();
 }
 
-/*
-export const metadata = {
-  title: "Feather",
-  description: "A fullstack Next website"
-} 
-*/
+export async function generateMetadata(props) {
+  const params = await props.params
+  const id = await params.id ;
 
-export async function generateMetadata({ params }) {
-
-  const post = await getData(params.id)
+  const post = await getData(id)
   return {
     title: post.title,
     description: post.desc,
@@ -48,7 +50,7 @@ const BlogPost = async (props) => {
               src={data.img}
               alt=""
               width={40}
-              height={40}
+              height={50}
               className={styles.avatar}
             />
             <span className={styles.username}>{data.username}</span>

@@ -15,12 +15,13 @@
   left: 20px;
   background-color: #5ac28e;
   padding: 5px;
-  color: white;
+  color: inherit; 
 }
 
 .textContainer {
   display: flex;
   gap: 100px;
+  flex-wrap: wrap;
 }
 
 .item {
@@ -31,31 +32,29 @@
   gap: 30px;
 }
 
-.desc {
-  font-size: 20px;
-  font-weight: 300;
-  text-align: justify;
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: inherit; 
 }
 
 .desc {
   font-size: 18px;
   line-height: 1.7;
-  color: #ebdbdb;
-}
-
-.title {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 20px;
+  text-align: justify;
+  color: inherit; 
 }
 
 .imgTitle {
   font-size: 48px;
   font-weight: 700;
+  color: inherit; 
 }
 
 .imgDesc {
   font-size: 18px;
   font-weight: 400;
   max-width: 600px;
+  color: inherit; 
 }

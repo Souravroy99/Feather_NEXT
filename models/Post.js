@@ -23,7 +23,9 @@ const postSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true
-})
+}) 
 
-const PostModel = mongoose.model('Post', postSchema)
+// ✅ Prevent model overwrite error
+const PostModel = mongoose.models.Post || mongoose.model("Post", postSchema);
+
 export default PostModel
