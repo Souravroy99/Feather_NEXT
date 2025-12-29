@@ -60,34 +60,6 @@ This project is ideal as:
 
 ---
 
-## 📂 Project Structure
-
-```
-
-Feather_NEXT/
-├── app/
-│   ├── api/
-│   │   └── auth/                 # NextAuth API routes
-│   ├── dashboard/
-│   │   ├── (auth)/               # Login & Register pages
-│   │   └── page.jsx              # Protected dashboard
-│   ├── layout.js
-│   └── page.js                   # Home page
-│
-├── components/                   # Reusable components
-├── context/                      # Context providers
-├── models/                       # Data models
-├── utils/                        # Utility functions
-├── public/                       # Static assets
-│
-├── next.config.mjs
-├── package.json
-└── README.md
-
-````
-
----
-
 ## ⚙️ Getting Started (Local Setup)
 
 ### 1️⃣ Clone the Repository
@@ -158,26 +130,9 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser.
 ## 🧪 Possible Improvements
 
 * Add database integration (MongoDB / PostgreSQL)
-* Implement password hashing & validation
 * Add role-based access control
-* Add dark mode
 * Improve error handling UI
 * Add tests for auth flows
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repo
-2. Create a feature branch
-
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. Commit changes
-4. Push to your branch
-5. Open a Pull Request
-
----
+```
