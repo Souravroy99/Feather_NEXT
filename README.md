@@ -1,37 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+```markdown
+# 🪶 Feather Next
 
-## Getting Started
+A modern full-stack authentication-based web application built with **Next.js App Router**, **NextAuth**, and **React**.  
+Feather Next demonstrates real-world authentication flows, protected routes, and clean client/server separation using the latest Next.js features.
 
-First, run the development server:
+🔗 **Live Demo**:  
+https://feather-next-kz1k-84mk492tv-souravroy99s-projects.vercel.app  
+
+📦 **GitHub Repository**:  
+https://github.com/Souravroy99/Feather_NEXT
+
+---
+
+## 📌 Overview
+
+Feather Next is a full-stack starter project focused on **authentication and dashboard access**.  
+It showcases how to properly structure authentication flows in the **Next.js App Router**, including:
+
+- Client & server component separation
+- Credential-based authentication
+- OAuth social login
+- Protected dashboard routes
+- Production-ready deployment on Vercel
+
+This project is ideal as:
+- A real-world **Next.js authentication reference**
+- A **starter template** for SaaS or dashboard-based apps
+- A **portfolio project** demonstrating full-stack skills
+
+---
+
+## 🚀 Features
+
+- ✅ User Registration
+- ✅ Email & Password Login
+- ✅ Google OAuth Login
+- ✅ Protected Dashboard Routes
+- ✅ NextAuth Session Handling
+- ✅ API Routes for Auth
+- ✅ Clean UI with responsive design
+- ✅ Deployed on Vercel
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- Next.js (App Router)
+- React
+- CSS Modules
+
+**Backend / Auth**
+- NextAuth
+- Credentials Provider
+- Google OAuth Provider
+
+**Deployment**
+- Vercel
+
+---
+
+## 📂 Project Structure
+
+```
+
+Feather_NEXT/
+├── app/
+│   ├── api/
+│   │   └── auth/                 # NextAuth API routes
+│   ├── dashboard/
+│   │   ├── (auth)/               # Login & Register pages
+│   │   └── page.jsx              # Protected dashboard
+│   ├── layout.js
+│   └── page.js                   # Home page
+│
+├── components/                   # Reusable components
+├── context/                      # Context providers
+├── models/                       # Data models
+├── utils/                        # Utility functions
+├── public/                       # Static assets
+│
+├── next.config.mjs
+├── package.json
+└── README.md
+
+````
+
+---
+
+## ⚙️ Getting Started (Local Setup)
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Souravroy99/Feather_NEXT.git
+cd Feather_NEXT
+````
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Configure Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+---
+
+### 4️⃣ Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open **[http://localhost:3000](http://localhost:3000)** in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Authentication Flow
 
-## Learn More
+* **Register**:
+  Users can create an account via the registration form.
 
-To learn more about Next.js, take a look at the following resources:
+* **Login**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  * Email & password authentication
+  * Google OAuth login
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Session Handling**:
 
-## Deploy on Vercel
+  * Managed via NextAuth
+  * Authenticated users are redirected to `/dashboard`
+  * Unauthenticated users cannot access protected routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# Feather_NEXT" 
+## 🧠 Key Learnings from This Project
+
+* Proper use of **Client vs Server Components**
+* Handling **useSearchParams with Suspense**
+* Structuring auth pages using route groups
+* Implementing **NextAuth in App Router**
+* Fixing prerender & CSR bailout issues
+* Deploying production-ready Next.js apps on Vercel
+
+---
+
+## 🧪 Possible Improvements
+
+* Add database integration (MongoDB / PostgreSQL)
+* Implement password hashing & validation
+* Add role-based access control
+* Add dark mode
+* Improve error handling UI
+* Add tests for auth flows
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repo
+2. Create a feature branch
+
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Commit changes
+4. Push to your branch
+5. Open a Pull Request
+
+---
