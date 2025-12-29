@@ -7,7 +7,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
-const dashboard = () => {
+const Dashboard = () => {
 
   const router = useRouter()
   const session = useSession();
@@ -96,4 +96,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard

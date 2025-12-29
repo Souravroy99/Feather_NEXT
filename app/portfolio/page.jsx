@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 
-const portfolio = () => {
+const Portfolio = () => {
   return (
     <div>
       <h1 className={styles.selectTitle}>Choose a gallery</h1>
@@ -22,4 +22,4 @@ const portfolio = () => {
   )
 } 
 
-export default portfolio
+export default Portfolio

@@ -2,7 +2,7 @@ import Image from "next/image"
 import styles from "./page.module.css"
 import Button from "@/components/Button/Button"
 
-const about = () => {
+const About = () => {
   return (
     <div>
       <div className={styles.imgContainer}>
@@ -65,4 +65,4 @@ const about = () => {
   )
 }
 
-export default about
+export default About
