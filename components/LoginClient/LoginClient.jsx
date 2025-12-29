@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import styles from "./page.module.css";
+import styles from "@/app/dashboard/(auth)/login/page.module.css";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
