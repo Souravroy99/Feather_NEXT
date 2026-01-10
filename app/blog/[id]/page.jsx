@@ -5,13 +5,7 @@ import { notFound } from "next/navigation";
 
 async function getData(id) {
 
-  /*
-    ➡️ In Next.js server runtime, fetch does NOT know the origin
-    ➡️ Relative URLs (/api/...) do not work on the server
-
-    ✅This works in client components, but fails on the server.
-  */
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+  const res = await fetch(`https://feather-next-kz1k.vercel.app/api/posts/${id}`, {
     cache: "no-store",
   }); 
   
@@ -48,7 +42,7 @@ const BlogPost = async (props) => {
           <div className={styles.author}>
             <Image
               src={data.img}
-              alt=""
+              alt="Author"
               width={40}
               height={50}
               className={styles.avatar}
@@ -59,7 +53,7 @@ const BlogPost = async (props) => {
         <div className={styles.imageContainer}>
           <Image
             src={data.img}
-            alt=""
+            alt="Container"
             fill={true}
             className={styles.image}
           />
